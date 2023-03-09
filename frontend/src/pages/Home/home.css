@@ -1,0 +1,152 @@
+body{
+  background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  }
+  
+  .control {
+  text-align: center;
+  height: 190px;
+  padding: 30px 0 30px 0;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #deb887;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .inputLivro {
+  width: 70%;
+  background: #fff;
+  color: #444;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .inputLivro:focus {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .addButton {
+  background-color: #148f77;
+  border: none;
+  border: 1px solid black;
+  width: 150px;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  }
+  
+  .addButton:hover {
+  background-color: #6fce9e;
+  }
+
+  .searchButton {
+    background-color: #148f77;
+    border: none;
+    width: 150px;
+    border: 1px solid black;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    }
+
+    .btns{
+      display: flex;
+      gap: 50px;
+      max-width: 70%;
+    }
+    
+    .searchButton:hover {
+    background-color: #6fce9e;
+    }
+  
+  .listComps {
+  width: 90%;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+  box-sizing: border-box;
+  }
+  
+  .bookTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+  }
+  
+  .author {
+  font-size: 16px;
+  color: #777;
+  }
+  
+  .editDeleteIcons {
+  display: flex;
+  gap: 10px;
+  }
+  
+  .editDeleteIcons button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #777;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+  }
+  
+  .editDeleteIcons button:hover {
+  color: #444;
+  }
+
+  @media (max-width: 600px) {
+    .btns{
+      flex-direction: column;
+      align-items: center;
+      width: 70%;
+      gap: 10px;
+    }
+    .control{
+      width: 90%;
+      height: 230px;
+      padding-bottom: 50px;
+    
+    }
+    .addButton{
+      width: 100%;
+    }
+    .searchButton{
+      width: 100%;
+    }
+    .listComps{
+      width: 90%;
+    }
+  }
