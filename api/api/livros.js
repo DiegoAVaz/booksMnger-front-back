@@ -40,15 +40,6 @@ module.exports = (app) => {
             return res.json({ error: "Nome do livro não informado" })
         }
 
-        const livroExists = await app
-            .database("livros")
-            .where({ name: livro.name })
-            .first()
-
-        if(livroExists){
-            return res.status(400).json({ error: "O livro já está listado" })
-        }
-
         if(req.params.id){
             app
                 .database('livros')
@@ -57,12 +48,20 @@ module.exports = (app) => {
                 .then((_) => res.status(201).send())
                 .catch((err) => res.status(500).send(err))
         }else{
+            const livroExists = await app
+            .database("livros")
+            .where({ name: livro.name })
+            .first()
 
-            app
-                .database('livros')
-                .insert(livro)
-                .then((_) => res.status(200).send)
-                .catch((err) => res.status(500).send(err))
+            if(livroExists){
+                return res.status(400).json({ error: "O livro já está listado" })
+            }else{
+                app
+                    .database('livros')
+                    .insert(livro)
+                    .then((_) => res.status(200).send)
+                    .catch((err) => res.status(500).send(err))
+            }
         }
         return res.json(livro)
 
