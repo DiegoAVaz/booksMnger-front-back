@@ -1,7 +1,6 @@
-.login-container {
+.container {
     display: flex;
-
-    height: 600px;
+    height: 100vh;
     align-items: center;
     flex-direction: column;
     font-family: 'Lora', serif;
@@ -25,12 +24,12 @@
     flex-direction: column;
   }
   
-  .login-fieldset {
+  .cadastro-fieldset {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 180px;
+    height: 300px;
     width: 300px;
     border: none;
   }
@@ -59,9 +58,4 @@
   
   .login-button:hover {
     background-color: #512DA8;
-  }
-
-  .linkCadastro {
-    text-align: center;
-    margin-top: 20px; 
   }

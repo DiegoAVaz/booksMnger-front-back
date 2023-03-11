@@ -15,7 +15,7 @@ function Header(){
     return(
         <div className="containerHeader">
             <ImBook className='logo'/>
-            { location.pathname !== '/' ? (
+            { location.pathname !== '/' && location.pathname !== '/cadastro' ? (
                 <Link to='/' type='submit' onClick={() => handleLogout()} className='logoutButton'>SAIR</Link>
             ) : null }
         </div>

@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import './login.css'
 import { ImBook } from 'react-icons/im'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login(){
 
@@ -17,6 +19,12 @@ function Login(){
         if(email === defaultUser && senha === defaultSenha){
             localStorage.setItem('isLoggedIn', true)
             setIsLoggedIn(true)
+        } else {
+            toast("Email ou senha inválidos. Verifique-os e tente novamente.", { 
+                autoClose: 5000,
+                position: 'bottom-left',
+                theme: 'dark'
+            })
         }
     }
 
@@ -26,8 +34,8 @@ function Login(){
             {isLoggedIn ? (
                 <Navigate to='/home' />
             ) : (
-                <>
-                <div className="container">
+                
+                <div className="login-container">
                     <ImBook className='bookIcon'/>
                     <h1 className="login-title">LOGIN</h1>
                     <form onSubmit={handleLogin} className="login-form">
@@ -48,10 +56,15 @@ function Login(){
                             />
                             <button className="login-button" type='submit'>ENTRAR</button>
                         </fieldset>
+                        <div className='linkCadastro'>
+                            <Link to='/cadastro'>Ainda não tem uma conta? Clique aqui e cadastre-se!</Link>
+                        </div>
                         
                     </form>
+                    
+                    <ToastContainer/>
                 </div>
-                </>
+                
             )}
         </>
     )
