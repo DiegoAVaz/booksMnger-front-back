@@ -1,6 +1,8 @@
 module.exports = {
     client: "mysql2",
     connection: {
+        port: 3312,
+        host: "localhost",
         database: "booksdb",
         user: "root",
         password: ""
