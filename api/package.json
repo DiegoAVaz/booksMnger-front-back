@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
-    "knex": "knex"
+    "start": "nodemon"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +19,6 @@
     "react-icons": "^4.8.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.21"
   }
 }

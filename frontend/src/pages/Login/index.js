@@ -4,33 +4,29 @@ import './login.css'
 import { ImBook } from 'react-icons/im'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios'
 
 function Login(){
+
+    const defaultUser = 'teste@teste'
+    const defaultSenha = '123'
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-    
-function handleLogin(e){
-    e.preventDefault()
-
-    axios.post('http://localhost:5000/login', {
-        email,
-        senha
-    }).then(res => {
-        console.log(res)
-        localStorage.setItem('isLoggedIn', true)
-        setIsLoggedIn(true)
-    }).catch(error => {
-      toast("Email ou senha inválidos. Verifique-os e tente novamente.", { 
-        autoClose: 5000,
-        position: 'bottom-left',
-        theme: 'dark'
-      })
-    })
-  }
+    function handleLogin(e){
+        e.preventDefault()
+        if(email === defaultUser && senha === defaultSenha){
+            localStorage.setItem('isLoggedIn', true)
+            setIsLoggedIn(true)
+        } else {
+            toast("Email ou senha inválidos. Verifique-os e tente novamente.", { 
+                autoClose: 5000,
+                position: 'bottom-left',
+                theme: 'dark'
+            })
+        }
+    }
 
     return(
         <>

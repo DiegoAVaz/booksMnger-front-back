@@ -7,10 +7,6 @@ module.exports = (app) => {
         .delete(app.api.livros.remove)
         .get(app.api.livros.getById)
         .put(app.api.livros.save)
-
-    app.route('/login')
-        .get(app.api.login.auth)
-        .post(app.api.login.auth)
     
     app.route('/usuarios')
         .get(app.api.users.get)
